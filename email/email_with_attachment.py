@@ -12,7 +12,7 @@ def send_email_with_attachment(subject, body_text, to_emails, file_to_attach):
     """
     Send an email with an attachment
     """
-    header = f"Content-Disposition", "attachment; filename={file_to_attach}"
+    header = "Content-Disposition", "attachment; filename={file_to_attach}"
 
     # extract server and from_addr from config
     host = "smtp.your_isp.com"
@@ -37,7 +37,7 @@ def send_email_with_attachment(subject, body_text, to_emails, file_to_attach):
         attachment.add_header(*header)
         msg.attach(attachment)
     except IOError:
-        msg = "Error opening attachment file %s" % file_to_attach
+        msg = f"Error opening attachment file {file_to_attach}"
         print(msg)
         sys.exit(1)
 

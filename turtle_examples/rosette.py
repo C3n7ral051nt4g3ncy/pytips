@@ -4,7 +4,7 @@ from time import perf_counter as clock, sleep
 def mn_eck(original_turtle, ne,sz):
     turtlelist = [original_turtle]
     # create ne-1 additional turtles
-    for i in range(1,ne):
+    for _ in range(1,ne):
         cloned_turtle = original_turtle.clone()
         cloned_turtle.rt(360.0/ne)
         turtlelist.append(cloned_turtle)

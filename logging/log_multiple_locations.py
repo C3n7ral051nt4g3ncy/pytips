@@ -1,7 +1,7 @@
 import logging
 
 def log(path, multipleLocs=False): 
-    logger = logging.getLogger("Test_logger_%s" % fname)
+    logger = logging.getLogger(f"Test_logger_{fname}")
     logger.setLevel(logging.INFO)
     fh = logging.FileHandler(path)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(message)s')

@@ -4,7 +4,7 @@ class decorator_with_arguments:
         print('in __init__')
         self.arg1 = arg1
         self.arg2 = arg2
-        print('Decorator args: {}, {}'.format(arg1, arg2))
+        print(f'Decorator args: {arg1}, {arg2}')
 
     def __call__(self, f):
         print('in __call__')

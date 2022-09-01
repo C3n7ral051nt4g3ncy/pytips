@@ -13,7 +13,7 @@ wav.setsampwidth(2)
 wav.setframerate(sample_rate)
 
 # Create a wav file _ hissy noise
-for i in range(2000):
+for _ in range(2000):
     value = random.randint(-32767, 32767)
     data = struct.pack('<h', value)
     wav.writeframesraw(data)

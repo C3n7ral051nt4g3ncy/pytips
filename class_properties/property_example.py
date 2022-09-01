@@ -9,4 +9,4 @@ class Person(object):
         """
         Return the full name
         """
-        return "%s %s" % (self.first_name, self.last_name)
+        return f"{self.first_name} {self.last_name}"

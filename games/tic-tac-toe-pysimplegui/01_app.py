@@ -6,7 +6,7 @@ def main():
 
     while True:
         event, values = window.read()
-        if event == "Exit" or event == sg.WIN_CLOSED:
+        if event in ["Exit", sg.WIN_CLOSED]:
             break
 
     window.close()

@@ -1,8 +1,9 @@
 def info(func):
     def wrapper(*args):
-        print('Function name: ' + func.__name__)
-        print('Function docstring: ' + str(func.__doc__))
+        print(f'Function name: {func.__name__}')
+        print(f'Function docstring: {str(func.__doc__)}')
         return func(*args)
+
     return wrapper
 
 @info

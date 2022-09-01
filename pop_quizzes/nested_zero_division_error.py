@@ -1,5 +1,5 @@
 try:
-    for i in range(3):
+    for _ in range(3):
         try:
             1 / 0
         except ZeroDivisionError:

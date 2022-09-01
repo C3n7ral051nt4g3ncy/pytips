@@ -13,10 +13,7 @@ def ask_if_play_again(player):
     """
     Ask the user if they want to play again or quit
     """
-    if player is None:
-        message = "Tied Game!"
-    else:
-        message = f"{player} won!"
+    message = "Tied Game!" if player is None else f"{player} won!"
     layout = [
         [sg.Text(f"{message} Do you want to play again or Quit?")],
         [sg.Button("Restart"), sg.Button("Quit")],
@@ -24,7 +21,7 @@ def ask_if_play_again(player):
     event, values = sg.Window("Play Again?", layout, modal=True).read(
         close=True
     )
-    return True if event == "Restart" else False
+    return event == "Restart"
 
 
 def check_if_won(winning_configurations):
@@ -47,12 +44,7 @@ def check_if_won(winning_configurations):
         for btn in configuration
     ]
 
-    if None not in data:
-        # Tied game
-        return (None, winner)
-
-    # Keep playing
-    return (False, winner)
+    return (None, winner) if None not in data else (False, winner)
 
 
 def get_winning_configurations(buttons):
@@ -146,7 +138,7 @@ def main():
     player = INITIAL_PLAYER
     while True:
         event, values = window.read()
-        if event == "Exit" or event == sg.WIN_CLOSED:
+        if event in ["Exit", sg.WIN_CLOSED]:
             break
         if isinstance(event, tuple):
             btn_clicked = window[event]

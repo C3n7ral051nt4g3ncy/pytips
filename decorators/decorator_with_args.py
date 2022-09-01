@@ -1,6 +1,6 @@
 def info(arg1, arg2):
-    print('Decorator arg1 = ' + str(arg1))
-    print('Decorator arg2 = ' + str(arg2))
+    print(f'Decorator arg1 = {str(arg1)}')
+    print(f'Decorator arg2 = {str(arg2)}')
 
     def the_real_decorator(function):
 

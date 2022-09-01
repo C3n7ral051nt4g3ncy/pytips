@@ -14,7 +14,7 @@ def create_timed_rotating_log(path):
                                        backupCount=5)
     logger.addHandler(handler)
 
-    for i in range(6):
+    for _ in range(6):
         logger.info("This is a test!")
         time.sleep(75)
 

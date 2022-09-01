@@ -1,11 +1,13 @@
 def bold(func):
     def wrapper():
-        return "<b>" + func() + "</b>"
+        return f"<b>{func()}</b>"
+
     return wrapper
 
 def italic(func):
     def wrapper():
-        return "<i>" + func() + "</i>"
+        return f"<i>{func()}</i>"
+
     return wrapper
 
 @bold

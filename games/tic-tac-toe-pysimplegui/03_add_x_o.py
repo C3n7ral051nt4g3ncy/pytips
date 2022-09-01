@@ -51,7 +51,7 @@ def main():
     player = "X"
     while True:
         event, values = window.read()
-        if event == "Exit" or event == sg.WIN_CLOSED:
+        if event in ["Exit", sg.WIN_CLOSED]:
             break
         if isinstance(event, tuple):
             btn_clicked = window[event]

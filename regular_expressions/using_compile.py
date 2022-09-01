@@ -6,10 +6,9 @@ strings = ['the', 'one']
 
 for string in strings:
     regex = re.compile(string)
-    match = re.search(regex, text)
-    if match:
-        print('Found "{}" in "{}"'.format(string, text))
+    if match := re.search(regex, text):
+        print(f'Found "{string}" in "{text}"')
         text_pos = match.span()
         print(text[match.start():match.end()])
     else:
-        print('Did not find "{}"'.format(string))
+        print(f'Did not find "{string}"')

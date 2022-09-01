@@ -5,10 +5,9 @@ text = "The ants go marching one by one"
 strings = ['the', 'one']
 
 for string in strings:
-    match = re.search(string, text)
-    if match:
-        print('Found "{}" in "{}"'.format(string, text))
+    if match := re.search(string, text):
+        print(f'Found "{string}" in "{text}"')
         text_pos = match.span()
         print(text[match.start():match.end()])
     else:
-        print('Did not find "{}"'.format(string))
+        print(f'Did not find "{string}"')

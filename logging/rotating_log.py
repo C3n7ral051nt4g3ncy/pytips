@@ -15,7 +15,7 @@ def create_rotating_log(path):
     logger.addHandler(handler)
 
     for i in range(10):
-        logger.info("This is test log line %s" % i)
+        logger.info(f"This is test log line {i}")
         time.sleep(1.5)
 
 

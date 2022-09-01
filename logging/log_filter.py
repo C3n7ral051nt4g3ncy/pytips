@@ -3,9 +3,7 @@ import sys
 
 class MyFilter(logging.Filter):
     def filter(self, record):
-        if record.funcName == 'a':
-            return False
-        return True
+        return record.funcName != 'a'
 
 logger = logging.getLogger('filter_test')
 logger.addFilter(MyFilter())

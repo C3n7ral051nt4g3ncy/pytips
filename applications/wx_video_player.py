@@ -8,9 +8,7 @@ class VideoPlayer(wx.Frame):
         self.media = '/path/to/video.mp4'
         self.media_ctrl.Bind(wx.media.EVT_MEDIA_LOADED, self.play)
         self.media_ctrl.Bind(wx.media.EVT_MEDIA_FINISHED, self.quit)
-        if self.media_ctrl.Load(self.media):
-            pass
-        else:
+        if not self.media_ctrl.Load(self.media):
             print("Media not found")
             self.quit(None)
 

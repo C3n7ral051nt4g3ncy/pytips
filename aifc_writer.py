@@ -9,7 +9,7 @@ obj.setnchannels(1) # mono
 obj.setsampwidth(2)
 obj.setframerate(sample_rate)
 
-for i in range(99999):
+for _ in range(99999):
     value = random.randint(-32767, 32767)
     data = struct.pack('<h', value)
     obj.writeframesraw( data )
